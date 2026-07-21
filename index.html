@@ -275,9 +275,9 @@
     display: flex; flex-direction: column; justify-content: center;
   }
   /* 메뉴 소개 폭죽 (7/10 사장님 "폭죽 수십발") — 로고·글자 뒤 층에서 연발 */
-  #menu-fw { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  #menu-fw { position: absolute; left: 50%; bottom: 0; transform: translate(-50%, 0);
     width: calc(100% + 420px); height: calc(100% + 320px); max-width: 96vw;
-    pointer-events: none; z-index: -1; }
+    pointer-events: none; z-index: -1; } /* 7/21 바닥 고정: 여유분 전부 위로 — 아래 메뉴 가이드 버튼에 불티 안 덮이게(대표님 "반짝반짝 버그" 제보) */
   /* 그릇 밑 영어 메뉴 소개 — 빨강·구기체 (7/10 사장님) */ /* 아래 여백 추가 확대 (7/10) */
   img.bowl {
     display: block; width: clamp(220px, 29vw, 320px); height: auto; /* 7/12 "좀 더 줄이고" (7/10 확대의 축소 재지시) */
@@ -412,7 +412,7 @@
     /* 폰 성능 보정 (7/10 "폰 느려"): 이중 그림자→한 겹, 점선 흐름 정지(등장 연출·정지 점선은 유지)
        ※#store 접두로 구체성 확보 — 아래쪽 기본 규칙보다 우선해야 함 */
     #store .map-card svg { filter: none; transform: translateZ(0); will-change: transform; } /* 폰: 그림자 제거 + GPU 층 승격 — 스크롤 방향 전환 시 "잡는 느낌" 제거 (7/10) */
-    #menu-fw { transform: translate(-50%, -50%) translateZ(0); }
+    #menu-fw { transform: translate(-50%, 0) translateZ(0); }
     #store .map-card.on svg path.route { animation: route-draw var(--ddur, 0.8s) ease-out forwards; animation-delay: var(--rin, 2.6s); }
   }
     .map-card svg {
